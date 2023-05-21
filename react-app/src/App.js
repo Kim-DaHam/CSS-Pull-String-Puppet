@@ -9,17 +9,21 @@ function App() {
 
   const delay = 300;
   let timer = null;
+  const stageWidth = document.body.clientWidth;
+  const stageHeight = document.body.clientHeight;
 
   const resize = ()=>{
     clearTimeout(timer);
     timer = setTimeout(()=>{
-      const stageWidth = document.body.clientWidth;
-      const stageHeight = document.body.clientHeight;
-
       canvas.width = stageWidth * pixelRatio;
       canvas.height = stageHeight * pixelRatio;
       ctx.scale(pixelRatio, pixelRatio);
     }, delay)
+  }
+
+  const animate = ()=>{
+    window.requestAnimationFrame(animate);
+    ctx.clearRect(0,0,stageWidth, stageHeight);
   }
 
   useEffect(() => {
@@ -32,6 +36,7 @@ function App() {
     if(ctx !== null && pixelRatio !== 0) {
       window.addEventListener('resize', resize, false);
       resize();
+      window.requestAnimationFrame(animate);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ctx, pixelRatio])
