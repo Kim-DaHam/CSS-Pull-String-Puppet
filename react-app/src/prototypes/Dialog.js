@@ -9,18 +9,18 @@ const HEIGHT = 260;
 
 export class Dialog {
     constructor(){
-        this.this.pos = new Point(); // Dialog 좌표
-        this.this.target = new Point(); // Dialog 위에 클릭한 좌표
-        this.prevthis.pos = new Point(); // 이전 좌표
-        this.downthis.pos = new Point(); // 마우스 내려놓은 위치
-        this.speedthis.pos = new Point();
-        this.startthis.pos = new Point(); // 마우스 클릭했을 당시 Dialog 좌표
-        this.mousethis.pos = new Point();
-        this.centerthis.pos = new Point(); // Dialog 가운데 좌표
+        this.pos = new Point(); // Dialog 좌표
+        this.target = new Point(); // Dialog 위에 클릭한 좌표
+        this.prevPos = new Point(); // 이전 좌표
+        this.downPos = new Point(); // 마우스 내려놓은 위치
+        this.speedPos = new Point();
+        this.startPos = new Point(); // 마우스 클릭했을 당시 Dialog 좌표
+        this.mousePos = new Point();
+        this.centerPos = new Point(); // Dialog 가운데 좌표
         this.origin = new Point();
         this.rotation = 0;
         this.sideValue = 0;
-        this.this.isDown = false; // Dialog가 클릭 되었는지
+        this.isDown = false; // Dialog가 클릭 되었는지
     }
 
     resize(stageWidth, stageHeight){
